@@ -11,7 +11,7 @@ import SwiftUI
 struct Influence_me_App: App {
     var body: some Scene {
         WindowGroup {
-            TitlesView()
+            SearchView(titles: [""])
         }
     }
 }

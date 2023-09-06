@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-   
-    var inputTitle:String
-    @State var displayedTitles: [String] = []
     
+    var inputTitle:String
+    
+    @State var displayedTitles: [String] = []
+    @State var titles:[String]
     var body: some View {
         NavigationView {
             Text("Title ideas for:").bold()
@@ -23,10 +24,9 @@ struct ContentView: View {
                 Text("\(inputTitle)")
                     .frame(alignment: .center)
                 HStack(){
-                    
-                    
                     Spacer()
                     Button(action: {
+                        
                         refreshTitles()
                     }) {
                         Label("", systemImage: "arrow.counterclockwise.circle")
@@ -54,6 +54,7 @@ struct ContentView: View {
     }
     
     func refreshTitles() {
+        print(titles)
         if titles.isEmpty {
             // Handle case when the titles array is empty
             return
@@ -65,10 +66,12 @@ struct ContentView: View {
         // Take the first 3 elements to display
         displayedTitles = Array(titles.prefix(5))
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(inputTitle: "text")
+        ContentView(inputTitle: "text", titles: [""])
     }
 }

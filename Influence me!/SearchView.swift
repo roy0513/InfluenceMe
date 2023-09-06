@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText: String = ""
     @State private var isNavigationActive: Bool = false
+    @State var titles:[String]
     var body: some View {
         NavigationView {
             
@@ -19,11 +20,13 @@ struct SearchView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
-                NavigationLink("", destination: ContentView(inputTitle: searchText), isActive: $isNavigationActive)
+                NavigationLink("", destination: ContentView(inputTitle: searchText, titles: titles), isActive: $isNavigationActive)
                     .opacity(0)
                 
                 Button(action: {
+                    query(for: searchText)
                     isNavigationActive = true
+                    
                 }) {
                     Text("Search")
                         .font(.headline)
@@ -38,18 +41,21 @@ struct SearchView: View {
         }
     }
     
-    struct SearchResultsView: View {
-        @Binding var searchText: String
-        
-        var body: some View {
-            Text("Search Results for: \(searchText)")
-                .font(.title)
-                .padding()
+    func query(for title:String){
+        if title=="Food"{
+            titles=titlesFood
+            print(titles)
+        }else if title=="Politic"{
+            titles=titlesPolitic
+        }else if title=="Fashion"{
+            titles=titlesFashion
+        }else{
+            titles=["No result"]
         }
     }
     struct SearchView_Previews: PreviewProvider {
         static var previews: some View {
-            SearchView()
+            SearchView(titles: [""])
         }
     }
     }
