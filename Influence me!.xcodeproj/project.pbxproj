@@ -13,6 +13,7 @@
 		CE949A4D2AA84322006CFCE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE949A4C2AA84322006CFCE6 /* Preview Assets.xcassets */; };
 		CE949A542AA843CE006CFCE6 /* TitleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE949A532AA843CE006CFCE6 /* TitleList.swift */; };
 		CE949A572AA843F0006CFCE6 /* TitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE949A562AA843F0006CFCE6 /* TitlesView.swift */; };
+		CE949A592AA85716006CFCE6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE949A582AA85716006CFCE6 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		CE949A4C2AA84322006CFCE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE949A532AA843CE006CFCE6 /* TitleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleList.swift; sourceTree = "<group>"; };
 		CE949A562AA843F0006CFCE6 /* TitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesView.swift; sourceTree = "<group>"; };
+		CE949A582AA85716006CFCE6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				CE949A452AA84320006CFCE6 /* Influence_me_App.swift */,
 				CE949A472AA84320006CFCE6 /* ContentView.swift */,
 				CE949A562AA843F0006CFCE6 /* TitlesView.swift */,
+				CE949A582AA85716006CFCE6 /* SearchView.swift */,
 				CE949A552AA843D2006CFCE6 /* Model */,
 				CE949A492AA84322006CFCE6 /* Assets.xcassets */,
 				CE949A4B2AA84322006CFCE6 /* Preview Content */,
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE949A592AA85716006CFCE6 /* SearchView.swift in Sources */,
 				CE949A482AA84320006CFCE6 /* ContentView.swift in Sources */,
 				CE949A542AA843CE006CFCE6 /* TitleList.swift in Sources */,
 				CE949A462AA84320006CFCE6 /* Influence_me_App.swift in Sources */,
