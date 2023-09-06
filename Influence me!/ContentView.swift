@@ -14,22 +14,26 @@ struct ContentView: View {
     @State var displayedTitles: [String] = []
     
     var body: some View {
-        VStack {
-            Button("Refresh") {
-                refreshTitles()
-            }
-            HStack{
-                VStack{
-                    Text("Title ideas for:").bold()
-                    Text("'\(inputTitle)'")
-                }
-                
-            }
+        NavigationView {
+            Text("Title ideas for:").bold()
         }
         VStack {
-            
-            
-            
+            ZStack{
+                
+                Text("\(inputTitle)")
+                    .frame(alignment: .center)
+                HStack(){
+                    
+                    
+                    Spacer()
+                    Button(action: {
+                        refreshTitles()
+                    }) {
+                        Label("", systemImage: "arrow.counterclockwise.circle")
+                    }
+                    
+                }}
+            .padding()
             List {
                 Section(header: Text("Recommend Ideas")) {
                     ForEach(displayedTitles, id: \.self) { title in
@@ -43,9 +47,10 @@ struct ContentView: View {
                 }
             }
         }
-        .onAppear {
-            refreshTitles()
-        }
+        .onAppear {refreshTitles()}
+        .frame(height:700,alignment: .top)
+        
+        
     }
     
     func refreshTitles() {

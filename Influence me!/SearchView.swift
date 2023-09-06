@@ -12,7 +12,9 @@ struct SearchView: View {
     @State private var isNavigationActive: Bool = false
     var body: some View {
         NavigationView {
+            
             VStack {
+                Image("Logo").resizable().scaledToFit().frame(width:200,height: 120)
                 TextField("Enter text to search", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -32,7 +34,7 @@ struct SearchView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Home")
+            
         }
     }
     
