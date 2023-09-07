@@ -14,7 +14,6 @@
 		CE949A542AA843CE006CFCE6 /* TitleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE949A532AA843CE006CFCE6 /* TitleList.swift */; };
 		CE949A592AA85716006CFCE6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE949A582AA85716006CFCE6 /* SearchView.swift */; };
 		CE96A01A2AA960C10001656D /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE96A0192AA960C10001656D /* OpenAISwift */; };
-		CE96A01C2AA963160001656D /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96A01B2AA963160001656D /* ApiCaller.swift */; };
 		CE96A01E2AA97CCD0001656D /* ChatGPTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96A01D2AA97CCD0001656D /* ChatGPTView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		CE949A4C2AA84322006CFCE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE949A532AA843CE006CFCE6 /* TitleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleList.swift; sourceTree = "<group>"; };
 		CE949A582AA85716006CFCE6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		CE96A01B2AA963160001656D /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		CE96A01D2AA97CCD0001656D /* ChatGPTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 				CE949A452AA84320006CFCE6 /* Influence_me_App.swift */,
 				CE949A472AA84320006CFCE6 /* ContentView.swift */,
 				CE949A582AA85716006CFCE6 /* SearchView.swift */,
-				CE96A01B2AA963160001656D /* ApiCaller.swift */,
 				CE949A552AA843D2006CFCE6 /* Model */,
 				CE949A492AA84322006CFCE6 /* Assets.xcassets */,
 				CE949A4B2AA84322006CFCE6 /* Preview Content */,
@@ -170,7 +167,6 @@
 				CE96A01E2AA97CCD0001656D /* ChatGPTView.swift in Sources */,
 				CE949A542AA843CE006CFCE6 /* TitleList.swift in Sources */,
 				CE949A462AA84320006CFCE6 /* Influence_me_App.swift in Sources */,
-				CE96A01C2AA963160001656D /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

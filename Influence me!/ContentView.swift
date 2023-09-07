@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State var displayedTitles: [String] = []
     @State var titles:[String]
+    @State private var showAlert = false
     var body: some View {
         NavigationView {
             Text("Title ideas for:").bold()
@@ -35,14 +36,28 @@ struct ContentView: View {
                 }}
             .padding()
             List {
-                Section(header: Text("Recommend Ideas")) {
+                Section(header: Text("Recommend Ideas ✨")) {
                     ForEach(displayedTitles, id: \.self) { title in
-                        Text(title)
-                            .foregroundColor(.black)
-                            .onTapGesture {
-                                let pasteboard = UIPasteboard.general
-                                pasteboard.string = title
+                        
+                            
+                        HStack(){
+                                Text(title)
+                                    .foregroundColor(.black)
+                                    
+                            Spacer()
+                                Image(systemName: "list.clipboard").onTapGesture {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = title
+                                    showAlert = true
+                                }.alert(isPresented: $showAlert) {
+                                    Alert(title: Text("Copied to clipboard"), dismissButton: .default(Text("OK")) 
+                                    )
+                                }
+                                
                             }
+                        
+                        
+                        
                     }
                 }.listRowBackground(Capsule().fill(Color.white).padding(.vertical,10)).listRowSeparator(.hidden).headerProminence(.increased)
             }.environment(\.defaultMinListRowHeight, 100)
@@ -51,6 +66,7 @@ struct ContentView: View {
             query(for: inputTitle)
             refreshTitles()}
         .frame(height:700,alignment: .top)
+        
         
         
     }
