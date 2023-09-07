@@ -47,7 +47,9 @@ struct ContentView: View {
                 }.listRowBackground(Capsule().fill(Color.white).padding(.vertical,10)).listRowSeparator(.hidden).headerProminence(.increased)
             }.environment(\.defaultMinListRowHeight, 100)
         }
-        .onAppear {refreshTitles()}
+        .onAppear {
+            query(for: inputTitle)
+            refreshTitles()}
         .frame(height:700,alignment: .top)
         
         
@@ -67,11 +69,23 @@ struct ContentView: View {
         displayedTitles = Array(titles.prefix(5))
     }
     
+    func query(for title:String){
+        if title=="Food"{
+            titles=titlesFood
+            print(titles)
+        }else if title=="Politic"{
+            titles=titlesPolitic
+        }else if title=="Fashion"{
+            titles=titlesFashion
+        }else{
+            titles=["No result"]
+        }
+    }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(inputTitle: "text", titles: [""])
+        ContentView(inputTitle: "text",titles: [""])
     }
 }
