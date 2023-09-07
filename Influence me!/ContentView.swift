@@ -44,8 +44,8 @@ struct ContentView: View {
                                 pasteboard.string = title
                             }
                     }
-                }
-            }
+                }.listRowBackground(Capsule().fill(Color.white).padding(.vertical,10)).listRowSeparator(.hidden).headerProminence(.increased)
+            }.environment(\.defaultMinListRowHeight, 100)
         }
         .onAppear {refreshTitles()}
         .frame(height:700,alignment: .top)

@@ -13,12 +13,13 @@ struct SearchView: View {
     @State var titles:[String]
     var body: some View {
         NavigationView {
-            
+
             VStack {
                 Image("Logo").resizable().scaledToFit().frame(width:200,height: 120)
                 TextField("Enter text to search", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                
                 
                 NavigationLink("", destination: ContentView(inputTitle: searchText, titles: titles), isActive: $isNavigationActive)
                     .opacity(0)
