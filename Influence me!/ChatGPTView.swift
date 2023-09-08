@@ -36,15 +36,44 @@ final class ViewModel: ObservableObject{
 
 
 struct ChatGPTView: View {
+    var inputTitle:String
+    @State var displayedTitles: [String] = []
+    @State var titles:[String]
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
     @State var models = [String]()
-    
+    @State private var showAlert = false
     var body: some View {
         VStack(alignment:.leading){
             ForEach(models, id:\.self){string in
                 Text(string)
             }
+            List {
+                Section(header: Text("Recommend Ideas ✨")) {
+                    ForEach(displayedTitles, id: \.self) { title in
+                        
+                            
+                        HStack(){
+                                Text(title)
+                                    .foregroundColor(.black)
+                                    
+                            Spacer()
+                                Image(systemName: "list.clipboard").onTapGesture {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = title
+                                    showAlert = true
+                                }.alert(isPresented: $showAlert) {
+                                    Alert(title: Text("Copied to clipboard"), dismissButton: .default(Text("OK"))
+                                    )
+                                }
+                                
+                            }
+                        
+                        
+                        
+                    }
+                }.listRowBackground(Capsule().fill(Color.white).padding(.vertical,10)).listRowSeparator(.hidden).headerProminence(.increased)
+            }.environment(\.defaultMinListRowHeight, 100)
             Spacer()
             
             HStack{
@@ -75,6 +104,6 @@ struct ChatGPTView: View {
 
 struct ChatGPTView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatGPTView()
+        ChatGPTView(inputTitle:"test",titles:[""])
     }
 }

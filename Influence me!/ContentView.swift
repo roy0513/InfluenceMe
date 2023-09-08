@@ -45,12 +45,14 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                                     
                             Spacer()
-                                Image(systemName: "list.clipboard").onTapGesture {
+                                Image(systemName: "list.clipboard")
+                                .foregroundColor(.blue)
+                                .onTapGesture {
                                     let pasteboard = UIPasteboard.general
                                     pasteboard.string = title
                                     showAlert = true
                                 }.alert(isPresented: $showAlert) {
-                                    Alert(title: Text("Copied to clipboard"), dismissButton: .default(Text("OK")) 
+                                    Alert(title: Text("Copied to clipboard"), dismissButton: .default(Text("OK"))
                                     )
                                 }
                                 

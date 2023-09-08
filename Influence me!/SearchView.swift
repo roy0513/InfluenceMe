@@ -31,7 +31,7 @@ struct SearchView: View {
                     }
                     
                     NavigationLink {
-                        ContentView(inputTitle: searchText, titles: [])
+                        ContentView(inputTitle: searchText, titles: [""])
                     } label: {
                         HStack {
                             Text("Search")
